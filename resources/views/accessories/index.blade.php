@@ -1,12 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Listado Accesorios')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+  <h1>Listado Accesorios</h1>
 @stop
 
 @section('content')
+
 
 @foreach($accessories as $accessorie)
 <div class="card" style="width: 18rem;">
@@ -26,10 +27,11 @@
 </div>
 @endforeach
 
+
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="/css/adminlte.css">
 @stop
 
 @section('js')

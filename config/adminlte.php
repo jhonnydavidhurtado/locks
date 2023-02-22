@@ -311,6 +311,7 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+        /*
         [
             'text'        => 'Usuarios',
             'url'         => 'users',
@@ -318,6 +319,8 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
+        */
+        /*
         ['header' => 'account_settings'],
         [
             'text' => 'Perfil',
@@ -329,6 +332,8 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+
+        */
         [
             'text'    => 'Diseños',
             'icon'    => 'fas fa-fw fa-share',
@@ -337,6 +342,7 @@ return [
                     'text' => 'Ver Diseños',
                     'url'  => 'designs',
                 ],
+                /*
                 [
                     'text'    => 'level_one',
                     'url'     => '#',
@@ -361,6 +367,7 @@ return [
                         ],
                     ],
                 ],
+                */
                 [
                     'text' => 'Agregar Diseño',
                     'url'  => '/designs/create',
@@ -372,9 +379,11 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Accesorios',
+                    'text' => 'Ver Accesorios',
                     'url'  => 'accessories',
                 ],
+
+                /*
                 [
                     'text'    => 'level_one',
                     'url'     => '#',
@@ -399,6 +408,7 @@ return [
                         ],
                     ],
                 ],
+                */
                 [
                     'text' => 'Agregar Accesorios',
                     'url'  => '/accessories/create',
@@ -443,6 +453,8 @@ return [
                 ],
             ],
         ],
+
+        /*
         ['header' => 'labels'],
         [
             'text'       => 'important',
@@ -458,7 +470,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ],*/
     ],
 
     /*

@@ -25,14 +25,15 @@
 <br>
 <form method="POST" action="{{ route('designs.store') }}" enctype="multipart/form-data">
             @csrf
-            
-            <input type="file" name="design" placeholder="Diseño" aria-label="design" :value="old('design')">
-            <br>
-            <input type="text" name="price" placeholder="Precio" aria-label="price" :value="old('price')">
-            <br>
-            <input type="text" name="title" placeholder="Nombre" aria-label="title" :value="old('title')">
-             <br>
 
+            <input type="file" name="design" placeholder="Diseño" aria-label="design" :value="old('design')">
+            <br><br>
+
+            <input type="text" name="title" placeholder="Nombre" aria-label="title" :value="old('title')">
+            <br><br>
+            
+            <input type="text" name="price" placeholder="Precio" aria-label="price" :value="old('price')">
+            <br><br>
             
     <div style="margin-left:10px;">
   

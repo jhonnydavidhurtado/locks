@@ -16,7 +16,13 @@ class DesignController extends Controller
     public function index()
     {
         //Mostrar los diseños:
-        $designs = Design::all();
+        $designs = Design::select(
+        'designs.id','image','designs.price','title',
+        't1.type as type_frame','t1.description as description_frame','t1.price as price_frame',
+        't2.type as type_veneer','t2.description as description_veneer','t2.price as price_veneer')
+        ->leftJoin('accessories as t1','t1.id','designs.frame')
+        ->leftJoin('accessories as t2','t2.id','designs.veneer')
+        ->get();
         
         return view('designs.index',compact('designs'));
     }
@@ -30,7 +36,7 @@ class DesignController extends Controller
     {
         //Aquì crear el formulario:
         $veneers     = Accessorie::select('id','description')->where('type','=','Chapa')->get();
-        $frames     = Accessorie::select('id','description')->where('type','=','marco')->get();
+        $frames     = Accessorie::select('id','description')->where('type','=','Marco')->get();
 
         return view('designs.create',compact('veneers','frames'));
     }
@@ -43,8 +49,9 @@ class DesignController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
         $validated = $request->validate([
-            'design' => 'required|image',
+            'design' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'price'  => 'required|integer|min:0', 
             'title'  => 'required|string|min:0',
             'frame'  => 'nullable|integer|min:1',
@@ -60,13 +67,11 @@ class DesignController extends Controller
             $design->frame  = $request->frame;
         }
        
-
         if( $request->veneer != null )
         {
             $design->veneer  = $request->veneer;
         }
 
-        
        if($request->hasFile("design"))
        {
          $design_file             = $request->file("design");
@@ -77,7 +82,6 @@ class DesignController extends Controller
        } $design->save();
        
         return redirect()->route('designs.index'); 
-      
     }
 
     /**
@@ -101,8 +105,11 @@ class DesignController extends Controller
     {
         //designs/2/edit
         $design = Design::find($id);
-        
-        return view('designs.edit',compact('design'));
+
+        $veneers = Accessorie::select('id','description')->where('type','=','Chapa')->get();
+        $frames  = Accessorie::select('id','description')->where('type','=','Marco')->get();
+       
+        return view('designs.edit',compact('design','veneers','frames'));
     }
 
     /**
@@ -117,14 +124,19 @@ class DesignController extends Controller
         //dd($request);
         $validate = $request->validate
         ([
-            'design' => 'image',
+            'design' => 'image|mimes:jpeg,png,jpg|max:2048',
             'price'  => 'required|integer|min:0',
-            'title'  => 'required|string|min:0'
+            'title'  => 'required|string|min:0',
+            'frame'  => 'required|integer',
+            'veneer' => 'required|integer'
         ]);
         
         $design = Design::find($id);
         $design->price = $request->input('price');
         $design->title =$request->input('title');
+        $design->frame =$request->input('frame');
+        $design->veneer =$request->input('veneer');
+
         if($request->hasFile("design"))
         {
           $design_file             = $request->file("design");
