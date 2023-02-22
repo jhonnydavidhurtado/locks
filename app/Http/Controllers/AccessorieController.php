@@ -64,7 +64,8 @@ class AccessorieController extends Controller
            }
        
     
-          /*
+           
+          /* 
           if($request->hasFile("accessorie"))
           {
             $accessorie_file         = $request->file("accessorie");

@@ -14,7 +14,8 @@ class DesignController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
+        
         //Mostrar los diseños:
         $designs = Design::select(
         'designs.id','image','designs.price','title',
@@ -24,7 +25,7 @@ class DesignController extends Controller
         ->leftJoin('accessories as t2','t2.id','designs.veneer')
         ->get();
         
-        return view('designs.index',compact('designs'));
+        return view('designs.index',compact('designs'));  
     }
 
     /**

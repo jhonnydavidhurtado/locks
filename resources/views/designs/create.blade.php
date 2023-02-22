@@ -34,7 +34,7 @@
             
             <input type="text" name="price" placeholder="Precio" aria-label="price" :value="old('price')">
             <br><br>
-            
+
     <div style="margin-left:10px;">
   
     <select class="form-select form-select-sm" name="frame" id="frame">
@@ -44,7 +44,6 @@
         @endforeach 
  </select>
  <br>
-
  <br>
  <select class="form-select form-select-sm" name="veneer_title" id="veneer">
         <option value="">Seleccione la chapa</option>

@@ -8,6 +8,7 @@
 
 @section('content')
 
+
 <form method="POST" action="{{ route('designs.update',$design->id) }}" enctype="multipart/form-data">
             @csrf
             @method('PUT')

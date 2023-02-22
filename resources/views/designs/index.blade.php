@@ -10,7 +10,7 @@
 
 
 @foreach($designs as $design)
-
+ 
 <div class="card" style="width: 18rem;">
   <img src="{{ asset('photos/'.$design->image ) }}" class="card-img-top" alt="...">
   <div class="card-body">
