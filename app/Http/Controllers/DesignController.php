@@ -125,7 +125,7 @@ class DesignController extends Controller
         //dd($request);
         $validate = $request->validate
         ([
-            'design' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'design' => 'image|mimes:jpeg,png,jpg', //|max:2048',
             'price'  => 'required|integer|min:0',
             'title'  => 'required|string|min:0',
             'frame'  => 'required|integer',
