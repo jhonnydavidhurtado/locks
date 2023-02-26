@@ -63,6 +63,8 @@ class AccessorieController extends Controller
            }else{
             $accessorie->type = $request->type; 
            }
+
+           
        
     
            
