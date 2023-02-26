@@ -123,15 +123,16 @@ class DesignController extends Controller
     public function update(Request $request, $id)
     {
         //dd($request);
+
         $validate = $request->validate
         ([
             'design' => 'image|mimes:jpeg,png,jpg', //|max:2048',
             'price'  => 'required|integer|min:0',
-            'title'  => 'required|string|min:0',
-            'frame'  => 'required|integer',
-            'veneer' => 'required|integer'
+            'title'  => 'required|string',
+            'frame'  => 'required|integer|min:0',
+            'veneer' => 'required|integer|min:0'
         ]);
-        
+    
         $design = Design::find($id);
         $design->price = $request->input('price');
         $design->title =$request->input('title');

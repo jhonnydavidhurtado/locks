@@ -20,7 +20,7 @@
             <br>
 
             <select class="form-select form-select-sm" name="frame" id="frame">
-                    <option value="">Seleccione el marco</option>
+                    <option value="0">Seleccione el marco</option>
                     @foreach( $frames as $frame )
                         <option value="{{ $frame->id }}">{{ $frame->description }}</option>
                     @endforeach 
@@ -30,7 +30,7 @@
 
             <br>
             <select class="form-select form-select-sm" name="veneer" id="veneer">
-                    <option value="">Seleccione la chapa</option>
+                    <option value="0">Seleccione la chapa</option>
                     @foreach( $veneers as $veneer )
                         <option value="{{ $veneer->id }}">{{ $veneer->description }}</option>
                     @endforeach
