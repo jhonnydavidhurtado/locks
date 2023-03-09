@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DesignController;
 use App\Http\Controllers\AccessorieController;
 use App\Http\Controllers\QuoteController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::resource('users',UserController::class);
 Route::resource('designs',DesignController::class);
 Route::resource('accessories',AccessorieController::class);
 Route::resource('quotes',QuoteController::class);
+Route::resource('customers',CustomerController::class);
 
 
 

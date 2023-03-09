@@ -1,10 +1,10 @@
 
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Registrar Cotización')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Registrar Cotización</h1>
 @stop
 
 @section('content')

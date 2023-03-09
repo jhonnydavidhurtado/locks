@@ -335,6 +335,44 @@ return [
 
         */
         [
+            'text'    => 'Clientes',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Lista de clientes',
+                    'url'  => '/customers',
+                ],
+                [
+                    'text'    => 'level_one ',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'level_two ',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'level_three',
+                            'url'     => '#',
+                            'submenu' => [
+                                [
+                                    'text' => 'level_four',
+                                    'url'  => '#',
+                                ],
+                                [
+                                    'text' => 'level_five',
+                                    'url'  => '#',
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+                [
+                    'text' => 'Registrar Clientes',
+                    'url'  => '/customers/create',
+                ],
+            ],
+        ],
+        [
             'text'    => 'Diseños',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -453,6 +491,7 @@ return [
                 ],
             ],
         ],
+
 
         /*
         ['header' => 'labels'],

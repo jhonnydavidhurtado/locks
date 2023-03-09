@@ -53,9 +53,9 @@ class QuoteController extends Controller
     public function store(Request $request)
     {
            $validated = $request->validate([
-            'quote' => 'image',
-            'price'  => 'required|integer|min:0',
-            'title'  => 'required|string|min:0'
+            'quote'   => 'image',
+            'price'   => 'required|integer|min:0',
+            'title'   => 'required|string|min:0'
    
            ]);
    
@@ -65,11 +65,11 @@ class QuoteController extends Controller
 
           if($request->hasFile("quote"))
           {
-            $quote_file             = $request->file("quote");
-            $quote_name             = $quote_file->getClientOriginalName();
+            $quote_file              = $request->file("quote");
+            $quote_name              = $quote_file->getClientOriginalName();
             $route                   = public_path("photos");
             $quote_file->move($route,$quote_name);
-            $quote->image           = $quote_name;            
+            $quote->image            = $quote_name;            
           } $quote->save();
           
            return redirect()->route('quotes.index'); 
@@ -110,13 +110,13 @@ class QuoteController extends Controller
     {   
         $validate = $request->validate
         ([
-            'quote' => 'image',
+            'quote'  => 'image',
             'price'  => 'required|integer|min:0',
             'title'  => 'required|string|min:0'
         ]);
         
         $quote = Quote::find($id);
-        $quote->price     = $request->input('price');
+        $quote->price      = $request->input('price');
         $quote->title_type = $request->input('title_type');
         $quote->update();
 
